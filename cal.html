@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="cal.css">
+    </head>
+    <body>
+        <script>
+            function clear1(value)
+            {
+                document.getElementById('tx1').value = "";
+            }
+            function num(value)
+            {
+                document.getElementById('tx1').value += value;
+            }
+            function opts(value)
+            {
+                document.getElementById('tx1').value += value;
+            }
+            function delet() 
+            {
+			var input = document.getElementById("tx1");
+			input.value = input.value.substring(0, input.value.length - 1);
+            }
+            function result(value)
+            {
+                let p = document.getElementById('tx1').value;
+                let q = eval(p);
+                document.getElementById('tx1').value = q;
+            }
+        </script>
+        <div class="cl">
+            
+            <form class="hd1">
+                <div class="c2">
+                    <input id="tx1" type="text" name="name" placeholder="0">
+                </div>
+                <div>
+                    <input class="clr" type="button" onclick="clear1('AC')" value="AC">
+                    <input class="clr" type="button" onclick="delet('DLE')" value="DLE">
+                    <input class="clr" type="button" onclick="opts('%')" value="%">
+                    <input class="clr" type="button" onclick="opts('/')" value="/">
+                </div>
+                <div>
+                    <input class="bclr" type="button" onclick="num('9')" value="9">
+                    <input class="bclr" type="button" onclick="num('8')" value="8">
+                    <input class="bclr" type="button" onclick="num('7')" value="7">
+                    <input class="clr" type="button" onclick="opts('*')" value="*">
+                </div>
+                <div>
+                    <input class="bclr" type="button"onclick="num('6')" value="6">
+                    <input class="bclr" type="button" onclick="num('5')" value="5">
+                    <input class="bclr" type="button"onclick="num('4')" value="4">
+                    <input class="clr" type="button" onclick="opts('-')" value="-">
+                </div>
+                <div>
+                    <input class="bclr" type="button" onclick="num('3')" value="3">
+                    <input class="bclr" type="button" onclick="num('2')" value="2">
+                    <input class="bclr" type="button" onclick="num('1')" value="1">
+                    <input class="clr" type="button" onclick="opts('+')" value="+">
+                </div>
+                <div>
+                    <input class="bclr" type="button" onclick="num('0')" value="0">
+                    <input class="bclr" type="button"onclick="num('00')" value="00">
+                    <input class="bclr" type="button" onclick="num('.')" value=".">
+                    <input class="clr" type="button" onclick="result('=')"value="=">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
